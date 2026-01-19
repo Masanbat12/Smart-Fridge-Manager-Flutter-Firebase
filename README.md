@@ -1,4 +1,6 @@
 # 🧊 Smart Fridge Manager- Flutter &  Firebase
+#### Designed and implemented a minimal, extensible mobile application serving as a foundation for future open-source contributions and feature expansion.
+
 אפליקציית Flutter לניהול מוצרים במקרר, עם חיבור ל־Firebase (Authentication + Firestore).
 כל משתמש מקבל מקרר פרטי משלו באמצעות התחברות אנונימית.
 ## 🚀 תכונות עיקריות
