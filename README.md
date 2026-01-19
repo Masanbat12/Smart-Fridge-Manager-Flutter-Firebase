@@ -1,128 +1,123 @@
-# 🧊 Smart Fridge Manager- Flutter &  Firebase
-#### Designed and implemented a minimal, extensible mobile application serving as a foundation for future open-source contributions and feature expansion.
+# 🧊 Smart Fridge Manager  
+### Flutter (Dart) + Firebase
 
-אפליקציית Flutter לניהול מוצרים במקרר, עם חיבור ל־Firebase (Authentication + Firestore).
-כל משתמש מקבל מקרר פרטי משלו באמצעות התחברות אנונימית.
-## 🚀 תכונות עיקריות
-
-- 📱 אפליקציית Flutter עם Material 3
-- 🔐 התחברות אנונימית עם Firebase Authentication
-- ☁️ שמירת נתונים ב־Firebase Firestore
-- 👤 הפרדה מלאה בין משתמשים (`/users/{uid}/products`)
-- ➕ הוספת מוצרים
-- ➖ הגדלה / הקטנה של כמות
-- 🗑️ מחיקת מוצרים
-- 🔄 עדכון בזמן אמת באמצעות `StreamBuilder`
-
-
-## 🌱 Project Scope & Extensibility
-
-This project was intentionally designed as a **minimal, clean foundation** rather than a fully-featured product.
-
-Its goal is to demonstrate:
-- Proper Flutter project structure
-- Firebase Authentication & Firestore integration
-- Real-time data handling
-- User-based data separation
-
-The codebase is **open for extension** and can easily be expanded by the community.
-
-Possible extensions include (but are not limited to):
-- Expiration dates & smart alerts
-- Barcode scanning (OpenFoodFacts integration)
-- Categories & product images
-- Cloud Functions for automation
-- Advanced authentication (Google / Email)
-- Offline-first support
-
-## 🛠️ Tech Stack
-
-- Flutter (UI framework)
-- Dart (strongly typed, async-first language)
-- Firebase Authentication
-- Cloud Firestore
+A minimal and extensible Flutter application written in **Dart**, demonstrating clean architecture, real-time data handling, and Firebase integration.  
+The project is intentionally scoped as a **foundation** rather than a full product, making it ideal for learning, experimentation, and open-source extension.
 
 ---
 
-## 🧱 ארכיטקטורה
+## 🚀 Features
+
+- 📱 Flutter app using Material 3
+- 🧠 Written in Dart (null-safety, async/await, streams)
+- 🔐 Anonymous authentication with Firebase Auth
+- ☁️ Real-time data storage with Cloud Firestore
+- 👤 User-based data isolation (`/users/{uid}/products`)
+- ➕ Add products
+- ➖ Increase / decrease quantity
+- 🗑️ Remove products
+- 🔄 Live UI updates via Firestore streams
+
+---
+
+## 🧱 Project Structure
 lib/
 ├── main.dart
 ├── product.dart
 ├── product_service.dart
-├── firebase_options.dart
+└── products_page.dart
 
-- **Product** – מודל נתונים
-- **ProductService** – שכבת גישה ל־Firestore
-- **Firebase Auth** – זיהוי משתמש אנונימי
-- **Firestore Path**:/users/{uid}/products/{productId}
 
+- **product.dart** – Product data model  
+- **product_service.dart** – Firestore access & business logic  
+- **products_page.dart** – UI + StreamBuilder  
+- **main.dart** – App & Firebase initialization  
 
 ---
 
-## 🛠️ טכנולוגיות
+## 🛠️ Tech Stack
 
 - Flutter
-- Dart
-- Firebase Core
+- Dart (async/await, streams, null-safety)
 - Firebase Authentication
 - Cloud Firestore
 
 ---
-<img width="950" height="383" alt="image" src="https://github.com/user-attachments/assets/67529719-2099-4696-b863-b46f5f2065a6" />
-<img width="956" height="253" alt="image" src="https://github.com/user-attachments/assets/8aceb23e-6424-4900-ae00-7a30b0e6425e" />
 
-## 📦 Dependencies (pubspec.yaml)
+## ▶️ How to Run (Terminal)
 
-```yaml
-dependencies:
-flutter:
-  sdk: flutter
-firebase_core: ^latest
-firebase_auth: ^latest
-cloud_firestore: ^latest
+### Prerequisites
+- Flutter SDK
+- Dart SDK
+- Android Emulator / Physical device / Chrome (Web)
+- Firebase CLI
+- FlutterFire CLI
 
-### install & run:
-git clone https://github.com/your-username/fridge-manager.git
-cd fridge-manager
-- install package:
-  flutter pub get
+Check setup:
+```bash
+flutter doctor
 
-## 🔐 Firebase Setup
+1️⃣ Clone the Repository:
+git clone https://github.com/Masanbat12/Smart-Fridge-Manager-Flutter-Firebase.git
+cd Smart-Fridge-Manager-Flutter-Firebase
+2️⃣ Install Dependencies
+flutter pub get
 
+🔐 Firebase Setup (Required)
 For security reasons, Firebase configuration files are not included in this repository.
-
-To run the project locally:
-1. Create a Firebase project
-2. Register your Android / iOS / Web app
-3. Install FlutterFire CLI:
-   ```bash
-   dart pub global activate flutterfire_cli
-הגדרת Firebase
-צור פרויקט ב־Firebase Console
-הוסף אפליקציית Android / iOS
-הרץ:
+##### Steps:
+Create a Firebase project
+Register your Android / iOS / Web app
+##### Install FlutterFire CLI (once):
+dart pub global activate flutterfire_cli
+##### RUN:
 flutterfire configure
-יווצר קובץ:
-lib/firebase_options.dart
 
-##### run:
+3️⃣ Run the App
 flutter run
 
-🔐 Authentication
+Or for web:
+flutter run -d chrome
 
-האפליקציה משתמשת בהתחברות אנונימית:
-await FirebaseAuth.instance.signInAnonymously();
-כל משתמש מקבל uid ייחודי והנתונים נשמרים רק תחתיו.
+🔒 Security
+Firebase configuration files are excluded from version control
+Each user is authenticated anonymously
+Firestore rules enforce user-level data isolation
+Example Firestore path:
+
+/users/{uid}/products/{productId}
 
 
-## 🤝 Contributing
+🌱 Project Scope & Extensibility
+This project is intentionally designed as a minimal, clean foundation rather than a fully-featured application.
+It demonstrates:
+Proper Flutter project structure
+Dart async programming with streams
+Firebase Auth + Firestore integration
+Real-time UI updates
 
-This repository is open for learning and experimentation.
+Possible extensions:
+Expiration dates & smart reminders
+Barcode scanning (OpenFoodFacts API)
+Product categories & images
+Shared fridge (multi-user)
+Push notifications
+Offline-first support
 
-If you'd like to extend the project:
-- Fork the repository
-- Add new features or improvements
-- Submit a Pull Request
+### 🤝 Contributing
+Contributions are welcome!
+If you’d like to extend the project:
+Fork the repository
+Create a feature branch
+Submit a Pull Request
+Suggestions, improvements, and issues are encouraged.
 
-Suggestions, issues, and improvements are welcome.
+##### 👨‍💻 Author
+Masanbat
+Developed as a portfolio mini-project prior to graduation,
+focusing on clean code, maintainability, and extensibility.
+
+#### pictures to visual of the web:
+<img width="953" height="296" alt="image" src="https://github.com/user-attachments/assets/19fde3b7-73f9-4c32-bc1b-f3f70b2e852b" />
+
 
