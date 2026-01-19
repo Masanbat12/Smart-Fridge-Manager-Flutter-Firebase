@@ -116,8 +116,3 @@ Suggestions, improvements, and issues are encouraged.
 Masanbat
 Developed as a portfolio mini-project prior to graduation,
 focusing on clean code, maintainability, and extensibility.
-
-#### pictures to visual of the web:
-<img width="953" height="296" alt="image" src="https://github.com/user-attachments/assets/19fde3b7-73f9-4c32-bc1b-f3f70b2e852b" />
-
-
