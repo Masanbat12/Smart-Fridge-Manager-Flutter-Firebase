@@ -87,6 +87,16 @@ cd fridge-manager
 - install package:
   flutter pub get
 
+## 🔐 Firebase Setup
+
+For security reasons, Firebase configuration files are not included in this repository.
+
+To run the project locally:
+1. Create a Firebase project
+2. Register your Android / iOS / Web app
+3. Install FlutterFire CLI:
+   ```bash
+   dart pub global activate flutterfire_cli
 הגדרת Firebase
 צור פרויקט ב־Firebase Console
 הוסף אפליקציית Android / iOS
