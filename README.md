@@ -35,6 +35,13 @@ Possible extensions include (but are not limited to):
 - Advanced authentication (Google / Email)
 - Offline-first support
 
+## 🛠️ Tech Stack
+
+- Flutter (UI framework)
+- Dart (strongly typed, async-first language)
+- Firebase Authentication
+- Cloud Firestore
+
 ---
 
 ## 🧱 ארכיטקטורה
